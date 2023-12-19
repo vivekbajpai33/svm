@@ -1,0 +1,46 @@
+<div>
+    <div>
+        <div class="w-75 bg-login m-auto">
+            <div class="text-center text-danger pt-2">
+                <h2>Login Form</h2>
+            </div>
+            <div class="row">
+                <div class="pt-3 col-sm-12 col-lg-7 col-md-7 px-5">
+                        <div class="">
+                            <div class="form-para">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sunt illum, voluptatem molestiae nisi aliquam doloribus iusto dolorem eligendi. Quo, qui assumenda! Doloremque, ad. Rerum ut minima velit omnis fuga.</p>
+                            </div>
+                        </div>
+                        <div class="login-text-box text-center px-3">
+                            
+                            <section class="nerdy-pen">
+                                <p class="nerdy-pen__text">HY Student Do You Want
+                                  <span
+                                     class="txt-rotate"
+                                     data-period="2000"
+                                     data-rotate='[ "Admission.", "Placement.", "Collage.", "Teacher Help.", "fun!" ]'></span>
+                                </p>
+                                </section>
+                        </div>
+                </div>
+                <div class="col-sm-10 col-lg-4 col-md-4 bg-form text-start m-4 p-3">
+                     <div class="">
+                        <div class="login-form ">
+                           <form action="" method="post">
+                            {% csrf_token %}
+                             <label for="" class="form-label mt-2">Email <span>*</span></label>
+                             <input type="email" name="email"  class="form-control " required>
+                             <label for="" class="form-label mt-2">Password <span>*</span></label>
+                             <input type="password" class="form-control " name="password" required>
+                             <label for="" class="form-label mt-2">Confirm Password <span>*</span></label>
+                             <input type="password" class="form-control " name="confirm_password" required>
+                             <input type="submit" name=""  class="btn btn-primary w-100 mt-5">
+                           </form>
+                           <button class="btn btn-warning btn-sm mt-2 w-100 text-center"><a href="">Forget Password</a><span>&ensp;</span><span>&ensp;</span><a href="{% url "cangepassword" %}">Change Password</a></button>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

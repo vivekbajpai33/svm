@@ -1,0 +1,55 @@
+{% comment %} edit profile page details pop up {% endcomment %}
+<div class="modal fade" id="editprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Change Your Profile Informations</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="modal-footer">
+                  <input type="submit" name="" class="btn btn-sm btn-success" id="">
+                </div>
+                
+            </form>
+           
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} Notification pop up {% endcomment %}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Notification Board</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  {% for item in notification %}
+    <a href="/svm-notifications/{{item.slug}}/" style="text-decoration: none;">
+      <div class="mt-2 mx-3">
+        <div class="toast align-items-center dp-hide" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">            
+            <div class="toast-body">
+             {{item.topic}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+  
+</div>
+
+
+
+
+{% comment %} Notification content {% endcomment %}
+
+
+

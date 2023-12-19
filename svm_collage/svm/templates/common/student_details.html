@@ -1,0 +1,92 @@
+<div class="p-3 bg-login">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-10">
+            <div class="text-danger">
+                <h4>Your Informations</h4>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-2 col-md-2 text-end">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <svg class="cp-pointer" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="">
+        <div class="pt-2">
+            Name: {{name.username}}
+        </div>
+        <div class="pt-2">
+            Email: {{name.email}}
+        </div>
+        <div class="pt-2">
+            Prn:
+        </div>
+        <div class="pt-2">
+            ABC-ID:
+        </div>
+    </div>
+</div>
+<div class="mt-3 mb-2 " style="padding-left: 8px;">
+    <div>
+        <h4 class="text-danger">Your Stories</h4>
+    </div>
+    <div class="row" style="width: 10%;">
+        <div class="col-sm-12 p-2 text-center">
+            <button type="button" class="btn btn-primary bg-login" data-bs-toggle="modal" data-bs-target="#addstories">
+                <svg class="cp-pointer" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                 fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                 <path
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                </svg>
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- add storie pop up -->
+  
+  <!-- Modal -->
+<div class="modal fade" id="addstories" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           <form action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label for="" class="form-label">Story Title:</label>
+              <input type="text" class="form-control mt-1" name="student_story_title" id="">
+              <label for="" class="form-label">Upload Image:</label>
+              <input type="file" class="form-control mt-1" name="student_story" id="">  
+              <label for="" class="form-label mt-2">Highlight:</label>  
+              <input type="checkbox" name="highlight_story" class="mt-1 px-2 mx-2" id="">  
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>        
+           </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
